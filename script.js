@@ -7,7 +7,7 @@ var specialChaacters = ['~','!','@','#','$','%','&','*','+','?'];
 var numericCharacters = [0,1,2,3,4,5,6,7,8,9];
 
 
-function passwordOptions() {
+function generatePassword() {
     var length = parseInt(
         prompt('How many characters would you like your password to contain?'),
     );
@@ -36,6 +36,15 @@ function passwordOptions() {
     var includeSpecialCharacters = confirm(
         'Click OK to confirm including special characters'
     );
+
+    if (includeLowerCaseCharacters) {
+    } else if (includeUpperCaseCharacters) {
+    } else if (includeNumericCharacters) {    
+    } else if (includeSpecialCharacters) {
+    } else {
+        alert('Password must include at least one character type.')
+    }
+
 }
 // Write password to the #password input
 function writePassword() {
