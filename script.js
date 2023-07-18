@@ -4,11 +4,12 @@ var generateBtn = document.querySelector("#generate");
 // Arrays of character types to be included in password.
 var lowerCaseCharacters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 var upperCaseCharacters = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','Q','R','S','T','U','V','W','X','Y','Z'];
-var specialChaacters = ['~','!','@','#','$','%','&','*','+','?'];
-var numericCharacters = [0,1,2,3,4,5,6,7,8,9];
+var numericCharacters = ["0","1","2","3","4","5","6","7","8","9"];
+var specialCharacters = ['~','!','@','#','$','%','&','*','+','?'];
+
 
 // Function to obtain user input to generate password.
-function generatePassword() {
+function getPasswordOptions() {
     var length = parseInt(
         prompt('How many characters would you like your password to contain?'),
     );
@@ -59,7 +60,28 @@ function generatePassword() {
         includeNumericCharacters: includeNumericCharacters,
         includeSpecialCharacters: includeSpecialCharacters
     };
+
+    return passwordOptions;
 }
+// Function to generate a password with given user input.
+function generatePassword() {
+    var options = getPasswordOptions();
+    var currentArr = new Array()
+
+    if (options.includeLowerCaseCharacters) {
+        currentArr = currentArr.concat(lowerCaseCharacters)
+    }
+    if (options.includeUpperCaseCharacters) {
+        currentArr = currentArr.concat(upperCaseCharacters)
+    }
+    if (options.includeNumericCharacters) {
+        currentArr = currentArr.concat(numericCharacters)
+    }
+    if (options.includeSpecialCharacters) {
+        currentArr = currentArr.concat(specialCharacters)
+    }
+}
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
