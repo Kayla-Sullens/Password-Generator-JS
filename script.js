@@ -44,12 +44,9 @@ function getPasswordOptions() {
 
     // Conditional statement to check if user doesn't include any of the character types.
     // Password generator will end if all evaluate to false.
-    if (includeLowerCaseCharacters) {
-    } else if (includeUpperCaseCharacters) {
-    } else if (includeNumericCharacters) {    
-    } else if (includeSpecialCharacters) {
-    } else {
-        alert('Password must include at least one character type.')
+    if (!includeLowerCaseCharacters && !includeUpperCaseCharacters && !includeNumericCharacters && !includeSpecialCharacters) {
+        alert('Password must include at least one character type.');
+        getPasswordOptions();
     }
 
     // Object to store user input for which character types to include in password.
@@ -66,7 +63,8 @@ function getPasswordOptions() {
 // Function to generate a password with given user input.
 function generatePassword() {
     var options = getPasswordOptions();
-    var currentArr = new Array()
+    var currentArr = new Array();
+    console.log(options);
 
     if (options.includeLowerCaseCharacters) {
         currentArr = currentArr.concat(lowerCaseCharacters)
@@ -80,6 +78,7 @@ function generatePassword() {
     if (options.includeSpecialCharacters) {
         currentArr = currentArr.concat(specialCharacters)
     }
+    console.log(currentArr);
 }
 
 // Write password to the #password input
