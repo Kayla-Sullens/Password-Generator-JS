@@ -60,11 +60,19 @@ function getPasswordOptions() {
 
     return passwordOptions;
 }
+
+//Function to get a random element from an array
+function getRandom(arr) {
+    var randIndex = Math.floor(Math.random() * arr.length);
+    var randElement = arr[randIndex];
+
+    return randElement;
+}
+
 // Function to generate a password with given user input.
 function generatePassword() {
     var options = getPasswordOptions();
     var currentArr = new Array();
-    console.log(options);
 
     if (options.includeLowerCaseCharacters) {
         currentArr = currentArr.concat(lowerCaseCharacters)
@@ -78,7 +86,16 @@ function generatePassword() {
     if (options.includeSpecialCharacters) {
         currentArr = currentArr.concat(specialCharacters)
     }
-    console.log(currentArr);
+
+    console.log(currentArr)
+    // Generate a random string password from the new array.
+    let pass = ""
+    let i = 0
+    while (i < options.length) {
+        pass += getRandom(currentArr);
+        i++
+    }
+    return pass
 }
 
 // Write password to the #password input
