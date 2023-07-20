@@ -6,7 +6,7 @@ This challenge assignment demonstrates JavaScript understanding and abilities. I
 
 ## Link
 
-
+https://kayla-sullens.github.io/Password-Generator-JS/
 
 ## Screenshot
 
