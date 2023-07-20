@@ -10,4 +10,5 @@ https://kayla-sullens.github.io/Password-Generator-JS/
 
 ## Screenshot
 
-<img width="1395" alt="Password Generator Screenshot" src=" ">
+<img width="1164" alt="Password Generator Screenshot" src="https://github.com/Kayla-Sullens/Password-Generator-JS/assets/134717855/bbcbe702-8bda-4207-8386-13d251e5824b">
+
